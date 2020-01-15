@@ -193,13 +193,16 @@ void CFrm_Main::RectSkip(CDC* pDC)
 void CFrm_Main::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-
+	//return;
 	if(nIDEvent == 1)
 	{
+		
 		if(m_nLiveON == 0)
 		{
-			if (m_pImage != NULL && m_bThreadFlag == FALSE) 
+			//if (m_pImage != NULL && m_bThreadFlag == FALSE) 
+			if (m_ngrab == 1 && m_bThreadFlag == FALSE) 
 			{
+				//m_pImage = NULL;
 				
 				CDC* pDC;
 				pDC = m_Display.GetDC();
@@ -207,23 +210,26 @@ void CFrm_Main::OnTimer(UINT_PTR nIDEvent)
 				DrawImage(&m_Display, m_pImage);
 				Rect1(pDC);
 				ReleaseDC(pDC);
-				m_pImage = NULL;
-
+				//m_pImage = NULL;
+				m_ngrab = 0;
+				
+				/*
 				CDC* pDCBit;
 				pDCBit = m_DispLogo.GetDC();
 				LoadBitMap(pDCBit);
 				ReleaseDC(pDCBit);
-			
+			*/
 				CDC* pDCResult1;
 				pDCResult1 = m_Disp_Result1.GetDC();
 				Rect_Result1(pDCResult1);
 				ReleaseDC(pDCResult1);
 			
+				
+				
 				CDC* pDCResult2;
 				pDCResult2 = m_Disp_Result2.GetDC();
 				Rect_Result2(pDCResult2);
 				ReleaseDC(pDCResult2);
-				
 			}
 		}
 		else
@@ -233,7 +239,9 @@ void CFrm_Main::OnTimer(UINT_PTR nIDEvent)
 			{			
 				CDC* pDCR;
 				pDCR = m_Display.GetDC();
+				//ImageCalc2();
 				DrawImage(&m_Display, m_pImage);
+				//Rect1(pDCR);
 				RectRoi(pDCR);
 				ReleaseDC(pDCR);
 				
@@ -252,7 +260,8 @@ void CFrm_Main::OnTimer(UINT_PTR nIDEvent)
 			Rect_Result2(pDCResult2);
 			ReleaseDC(pDCResult2);
 		}
-
+		
+		
 	}
 
 	if(nIDEvent == 2)
@@ -541,7 +550,6 @@ void CFrm_Main::Rect1(CDC* pDC)
 
 			if(nX1 < 1000 && nX2 < 1000 && nY1 < 1000 && nY2 < 1000)
 			{
-			
 				nTCnt = 0;
 				bCheck = false;
 				for(int nXX = nX1+1; nXX < nX2+1; nXX++)
@@ -552,37 +560,7 @@ void CFrm_Main::Rect1(CDC* pDC)
 					{
 						//pDC->SetPixel(nXX, nYY,RGB(255,0,0));	
 						var = (BYTE) ((gPixelConv[nYY][nXX].R+gPixelConv[nYY][nXX].G+gPixelConv[nYY][nXX].B) / 3.0);
-						/*
-						if((nX == gnXCnt -1 && nY == 0) || (nX == 0 && nY == 0))
-						{
-							if(gPixelConv[nYY][nXX].R > gBlueC.nR 
-								&& gPixelConv[nYY][nXX].G > gBlueC.nG && gPixelConv[nYY][nXX].G < gBlackC.nG
-								&& gPixelConv[nYY][nXX].B > gBlueC.nB && gPixelConv[nYY][nXX].B < gBlackC.nB)
-							{
-								nLineCnt[nX][nY]++;
-							}
-
-							if(gPixelConv[nYY][nXX].R > 240 && gPixelConv[nYY][nXX].G > 240 && gPixelConv[nYY][nXX].B > 240)
-							{
-								nLineCnt[nX][nY]++;
-							}
-						}
-						else
-						{
-							if(gPixelConv[nYY][nXX].R > gBlueC.nR && gPixelConv[nYY][nXX].R < gBlackC.nR
-								&& gPixelConv[nYY][nXX].G > gBlueC.nG && gPixelConv[nYY][nXX].G < gBlackC.nG
-								&& gPixelConv[nYY][nXX].B > gBlueC.nB && gPixelConv[nYY][nXX].B < gBlackC.nB)
-							{
-							
-								nLineCnt[nX][nY]++;
-							}
-
-							if(gPixelConv[nYY][nXX].R > 240 && gPixelConv[nYY][nXX].G > 240 && gPixelConv[nYY][nXX].B > 240)
-							{
-								nLineCnt[nX][nY]++;
-							}
-						}
-						*/
+						
 						if(gPixelConv[nYY][nXX].R > gBlueC.nR && gPixelConv[nYY][nXX].G < gBlueC.nG	&& gPixelConv[nYY][nXX].B < gBlueC.nB)
 						{
 							nLineCnt[nX][nY]++;
@@ -593,6 +571,35 @@ void CFrm_Main::Rect1(CDC* pDC)
 							nLineCnt[nX][nY]++;
 						}
 
+						/*
+						if(gnSetMode == 1)
+						{
+						
+							if((nX == gnXCnt -1 && nY == 0) || (nX == 0 && nY == 0) || (nX == 0 && nY == gnYCnt -1)
+								|| (nX == gnXCnt -1 && nY == gnYCnt -1) || (nX == gnXCnt -1 && nY == 1) || (nX == 0 && nY == 1)
+								|| (nX == gnXCnt -1 && nY == gnYCnt -2) || (nX == 0 && nY == gnYCnt -2)
+								|| (nX == gnXCnt -1 && nY == gnYCnt -3) || (nX == 0 && nY == gnYCnt -3)
+								|| (nX == gnXCnt -1 && nY == 2) || (nX == 0 && nY == 2)
+								|| (nX == gnXCnt -1 && nY == 3) || (nX == 0 && nY == 3)
+								|| (nX == gnXCnt -1 && nY == 4) || (nX == 0 && nY == 4)
+								|| (nX == gnXCnt -1 && nY == 5) || (nX == 0 && nY == 5)
+								|| (nX == gnXCnt -1 && nY == 6) || (nX == 0 && nY == 6)
+								|| (nX == gnXCnt -1 && nY == 7) || (nX == 0 && nY == 7))
+							{
+								if(var > gnBlackValue - 50)
+								{
+									nCnt++;
+								}
+							}
+							else
+							{
+								if(var > gnBlackValue)
+								{
+									nCnt++;
+								}
+							}
+						}
+						*/
 					}
 				}
 			}
@@ -603,6 +610,7 @@ void CFrm_Main::Rect1(CDC* pDC)
 	{
 		for(int nX = 0; nX < gnXCnt; nX++)
 		{
+			/*
 			if(gnSetMode == 1)
 			{
 				nLineCnt[nX][nY] = 0;
@@ -612,8 +620,10 @@ void CFrm_Main::Rect1(CDC* pDC)
 			{
 				nBlueCnt[nX][nY] = 0;
 			}
+			*/
+			nBlueCnt[nX][nY] = 0;
 
-
+			
 			if(nX == 0 && nY == 0) //좌표계산
 			{
 				nX1 = gGrid.nPos_X;
@@ -628,21 +638,28 @@ void CFrm_Main::Rect1(CDC* pDC)
 				nY1 = gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y));
 				nY2 = gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)) + gGrid.nSize_Y;
 			}
+
+			nX1 = nAVGX[nX][nY] - gnInBoxSize;
+			nX2 = nAVGX[nX][nY] + gnInBoxSize;
+			nY1 = nAVGY[nX][nY] - gnInBoxSizeY;
+			nY2 = nAVGY[nX][nY] + gnInBoxSizeY;
 			
 			nCnt = 0;
 			
 			nBlackCnt = 0;
 			nChkBoxCnt = 0;
 			nNGCnt = 0;
-			for(int nYY = nY1; nYY < nY2; nYY++)
+			if(nX1 < 1000 && nX2 < 1000 && nY1 < 1000 && nY2 < 1000)
 			{
-				for(int nXX = nX1; nXX < nX2; nXX++)
+				for(int nYY = nY1; nYY < nY2; nYY++)
 				{
-					var = (BYTE) ((gPixelConv[nYY][nXX].R+gPixelConv[nYY][nXX].G+gPixelConv[nYY][nXX].B) / 3.0);
-					//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-
-					if(gnSetMode == 0)
+					for(int nXX = nX1; nXX < nX2; nXX++)
 					{
+					
+						var = (BYTE) ((gPixelConv[nYY][nXX].R+gPixelConv[nYY][nXX].G+gPixelConv[nYY][nXX].B) / 3.0);
+						//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
+
+					
 						if((nX == gnXCnt -1 && nY == 0) || (nX == 0 && nY == 0) || (nX == 0 && nY == gnYCnt -1)
 							|| (nX == gnXCnt -1 && nY == gnYCnt -1) || (nX == gnXCnt -1 && nY == 1) || (nX == 0 && nY == 1)
 							|| (nX == gnXCnt -1 && nY == gnYCnt -2) || (nX == 0 && nY == gnYCnt -2)
@@ -654,80 +671,28 @@ void CFrm_Main::Rect1(CDC* pDC)
 							|| (nX == gnXCnt -1 && nY == 6) || (nX == 0 && nY == 6)
 							|| (nX == gnXCnt -1 && nY == 7) || (nX == 0 && nY == 7))
 						{
-							if(gPixelConv[nYY][nXX].R > gnBlackValue - 60)
+							if(var > gnBlackValue - 50)
 							{
 								nCnt++;
 							}
 						}
 						else
 						{
-							if(gPixelConv[nYY][nXX].R > gnBlackValue)
+							if(var > gnBlackValue)
 							{
 								nCnt++;
 							}
 						}
+					
 
 						if(gPixelConv[nYY][nXX].B > gnBlueBChk && gPixelConv[nYY][nXX].G < gnBlueGChk && gPixelConv[nYY][nXX].R < gnBlueRChk)
 						{
 							nBlueCnt[nX][nY]++;
 						}
-					}
-					else
-					{
-						//우측상단 모서리홀만 옵셋을 준다.
-						/*
-						if((nX == gnXCnt -1 && nY == 0) || (nX == gnXCnt -1 && nY == 1) || (nX == gnXCnt -1 && nY == 2)  || (nX == gnXCnt -2 && nY == 1)
-							 || (nX == gnXCnt -1 && nY == 3)  || (nX == gnXCnt -1 && nY == 4)  || (nX == gnXCnt -1 && nY == 5) || (nX == gnXCnt -1 && nY == 6)
-							 || (nX == gnXCnt -2 && nY == 0) || (nX == gnXCnt -2 && nY == 2) || (nX == gnXCnt -2 && nY == 3))
-						{
-							if(gPixelConv[nYY][nXX].R > gBigC.nR - 8 && gPixelConv[nYY][nXX].G < gBigC.nG)
-							{
-								//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-								nCnt++;
-							}	
-						}
-						else
-						{
-							if(gPixelConv[nYY][nXX].R > gBigC.nR && gPixelConv[nYY][nXX].G < gBigC.nG)
-							{
-								//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-								nCnt++;
-							}	
-						}
-						*/
-						if((nX == gnXCnt -1 && nY == 0) || (nX == gnXCnt -1 && nY == 1) || (nX == gnXCnt -1 && nY == 2)  || (nX == gnXCnt -2 && nY == 1)
-							 || (nX == gnXCnt -1 && nY == 3)  || (nX == gnXCnt -1 && nY == 4)  || (nX == gnXCnt -1 && nY == 5) || (nX == gnXCnt -1 && nY == 6)
-							 || (nX == gnXCnt -2 && nY == 0) || (nX == gnXCnt -2 && nY == 2) || (nX == gnXCnt -2 && nY == 3))
-						{
-							if(gPixelConv[nYY][nXX].R + 15 > gBigC.nR && gPixelConv[nYY][nXX].G + 10 < gBigC.nG)
-							{
-								//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-								nCnt++;
-							}	
-						}
-						else
-						{
-							if(gPixelConv[nYY][nXX].R > gBigC.nR && gPixelConv[nYY][nXX].G < gBigC.nG)
-							{
-								//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-								nCnt++;
-							}	
-						}
-
-						if(var < gnNGval)
-						{
-							nLineCnt[nX][nY]++;
-							//pDC->SetPixel(nXX, nYY,RGB(255,0,0));
-						}
-
-						if(gPixelConv[nYY][nXX].B > gnBlueBChk && gPixelConv[nYY][nXX].G < gnBlueGChk && gPixelConv[nYY][nXX].R < gnBlueRChk)
-						{
-							nBlueCnt[nX][nY]++;
-						}
+					
 					}
 				}
 			}
-		
 			////////////////////////////////////////////////////////////////
 			if(gnGridON == 0) //ROI BOX그려주기
 			{
@@ -735,97 +700,48 @@ void CFrm_Main::Rect1(CDC* pDC)
 				{
 					if(gnSkip[nX][nY] == 0)
 					{
-						if(gnSetMode == 0)
-						{
-							if(gnScore2 < nCnt)
-							{					
-								if(m_nLiveON == 0)
-								{
-									if(nLineCnt[nX][nY] > gnLensINScore)
-									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));
-									}
-									else
-									{
-										if(nBlueCnt[nX][nY] < gnBlueCntSet)
-										{
-											gDispCnt.lOK++;
-											pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(50,255,50), RGB(0,255,0));
-										}
-										else
-										{
-											gDispCnt.lNG++;
-											pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-										}
-									}
-								}
-							}
-							else
+						
+						if(gnScore2 < nCnt)
+						{					
+							if(m_nLiveON == 0)
 							{
-								if(m_nLiveON == 0)
+								if(nLineCnt[nX][nY] > gnLensINScore)
 								{
-									if(nLineCnt[nX][nY] > gnLensINScore)
+									gDispCnt.lEmpty++;
+									pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(0,0,0), RGB(0,0,255));
+								}
+								else
+								{
+									if(nBlueCnt[nX][nY] < gnBlueCntSet)
 									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));
+										gDispCnt.lOK++;
+										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(1,1,1), RGB(40,150,40));
 									}
 									else
 									{
-										
 										gDispCnt.lNG++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-										
+										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(0,0,0), RGB(255,0,0));
 									}
 								}
 							}
 						}
 						else
 						{
-							if(gnOKRangeMax < nCnt)
+							if(m_nLiveON == 0)
 							{
-								if(m_nLiveON == 0)
+								if(nLineCnt[nX][nY] > gnLensINScore)
 								{
-									if(nBlueCnt[nX][nY] < gnBlueCntSet)
-									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));
-									}
-									else
-									{
-										gDispCnt.lNG++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-									}
-								}
-							}
-							else
-							{
-								if(gnOKRangeMin < nLineCnt[nX][nY])
-								{
-									if(m_nLiveON == 0)
-									{
-										gDispCnt.lNG++;
-										pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-									}
+									gDispCnt.lEmpty++;
+									pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(0,0,0), RGB(0,0,255));
 								}
 								else
 								{
-									if(m_nLiveON == 0)
-									{
-										if(nBlueCnt[nX][nY] > gnBlueCntSet)
-										{
-											gDispCnt.lNG++;
-											pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-										}
-										else
-										{
-											gDispCnt.lOK++;
-											pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(50,255,50), RGB(0,255,0));
-										}
-									}
+										
+									gDispCnt.lNG++;
+									pDC->Draw3dRect(gGrid.nPos_X , gGrid.nPos_Y, gGrid.nSize_X, gGrid.nSize_Y, RGB(0,0,0), RGB(255,0,0));
+										
 								}
 							}
-
 						}
 					}
 					else
@@ -837,104 +753,49 @@ void CFrm_Main::Rect1(CDC* pDC)
 				{
 					if(gnSkip[nX][nY] == 0)
 					{
-						if(gnSetMode == 0)
+						
+						if(gnScore2 < nCnt)
 						{
-							if(gnScore2 < nCnt)
-							{
 							
-								if(m_nLiveON == 0)
-								{
-									if(nLineCnt[nX][nY] > gnLensINScore)
-									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));	
-									}
-									else
-									{
-										if(nBlueCnt[nX][nY] < gnBlueCntSet)
-										{
-											gDispCnt.lOK++;	
-											pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,255,50), RGB(0,255,0));
-										}
-										else
-										{
-											gDispCnt.lNG++;
-											pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));	
-										}
-									}
-								}
-							}
-							else
+							if(m_nLiveON == 0)
 							{
-								if(m_nLiveON == 0)
+								if(nLineCnt[nX][nY] > gnLensINScore)
 								{
-									if(nLineCnt[nX][nY] > gnLensINScore)
+									gDispCnt.lEmpty++;
+									pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));	
+								}
+								else
+								{
+									if(nBlueCnt[nX][nY] < gnBlueCntSet)
 									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));	
+										gDispCnt.lOK++;	
+										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(1,1,1), RGB(40,150,40));
 									}
 									else
 									{
-										
 										gDispCnt.lNG++;
 										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));	
-										
 									}
 								}
 							}
 						}
 						else
 						{
-							if(gnOKRangeMax < nCnt)
+							if(m_nLiveON == 0)
 							{
-								if(nBlueCnt[nX][nY] > gnBlueCntSet)
+								if(nLineCnt[nX][nY] > gnLensINScore)
 								{
-									if(m_nLiveON == 0)
-									{
-										gDispCnt.lNG++;
-										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-									}	
+									gDispCnt.lEmpty++;
+									pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));	
 								}
 								else
 								{
-									if(m_nLiveON == 0)
-									{
-										gDispCnt.lEmpty++;
-										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,50,255), RGB(0,0,255));
-									}
+										
+									gDispCnt.lNG++;
+									pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));	
+										
 								}
 							}
-							else
-							{
-								if(gnOKRangeMin < nLineCnt[nX][nY])
-								{
-									if(m_nLiveON == 0)
-									{
-										gDispCnt.lNG++;
-										pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-									}	
-								}
-								else
-								{
-									if(nBlueCnt[nX][nY] > gnBlueCntSet)
-									{
-										if(m_nLiveON == 0)
-										{
-											gDispCnt.lNG++;
-											pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(255,50,50), RGB(255,0,0));
-										}	
-									}
-									else
-									{
-										if(m_nLiveON == 0)
-										{
-											gDispCnt.lOK++;
-											pDC->Draw3dRect(gGrid.nPos_X + ((gGrid.nGap_X * nX) + (nX * gGrid.nSize_X)) , gGrid.nPos_Y + ((gGrid.nGap_Y * nY) + (nY * gGrid.nSize_Y)), gGrid.nSize_X, gGrid.nSize_Y, RGB(50,255,50), RGB(0,255,0));
-										}	
-									}
-								}
-							}
-
 						}
 					}
 					else
@@ -946,72 +807,34 @@ void CFrm_Main::Rect1(CDC* pDC)
 			
 			if(gnScoreON == 0)
 			{
-				if(gnSetMode == 0)
+				
+				if(gnScoreMode == 0)
 				{
-					if(gnScoreMode == 0)
+					if(gnSkip[nX][nY] == 0)
 					{
-						if(gnSkip[nX][nY] == 0)
-						{
-							csData.Format("%d", nCnt);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
-					}
-					else if(gnScoreMode == 1)
-					{
-						if(gnSkip[nX][nY] == 0)
-						{
-						
-							csData.Format("%d", nLineCnt[nX][nY]);
-							//csData.Format("%d", nBlueCnt[nX][nY]);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
-					}
-					else if(gnScoreMode == 2)
-					{
-						if(gnSkip[nX][nY] == 0)
-						{
-						
-						
-							csData.Format("%d", nBlueCnt[nX][nY]);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
+						csData.Format("%d", nCnt);
+						pDC->SetTextColor(RGB(255,255,0));
+						pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
 					}
 				}
-				else
+				else if(gnScoreMode == 1)
 				{
-
-					if(gnScoreMode == 0)
+					if(gnSkip[nX][nY] == 0)
 					{
-						if(gnSkip[nX][nY] == 0)
-						{
-							csData.Format("%d", nLineCnt[nX][nY]);
-							//csData.Format("%d", nBlueCnt[nX][nY]);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
-					}
-					else if(gnScoreMode == 1)
-					{
-						if(gnSkip[nX][nY] == 0)
-						{
-							csData.Format("%d", nCnt);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
-					}
-					else if(gnScoreMode == 2)
-					{
-						if(gnSkip[nX][nY] == 0)
-						{
 						
-						
-							csData.Format("%d", nBlueCnt[nX][nY]);
-							pDC->SetTextColor(RGB(255,255,0));
-							pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
-						}
+						csData.Format("%d", nLineCnt[nX][nY]);
+						//csData.Format("%d", nBlueCnt[nX][nY]);
+						pDC->SetTextColor(RGB(255,255,0));
+						pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
+					}
+				}
+				else if(gnScoreMode == 2)
+				{
+					if(gnSkip[nX][nY] == 0)
+					{
+						csData.Format("%d", nBlueCnt[nX][nY]);
+						pDC->SetTextColor(RGB(255,255,0));
+						pDC->TextOutA(nX1,nY1 ,csData);//, DT_VCENTER);
 					}
 				}
 			}
@@ -1241,7 +1064,7 @@ UINT ThreadImageCaptureFunc(LPVOID param)
 					}
 					fc.Convert(image, ptrGrabResult);
 					memcpy(m_pImage->imageData, (uint8_t*)image.GetBuffer(), ptrGrabResult->GetWidth() * ptrGrabResult->GetHeight() * 3);
-					
+					m_ngrab = 1;
 				}
 				//pDlg->Invalidate(FALSE);
 				
@@ -1265,7 +1088,8 @@ UINT ThreadImageCaptureFunc(LPVOID param)
 
 
 	}
-
+	
+	
 	return 0;
 }
 
@@ -1408,13 +1232,19 @@ void CFrm_Main::Rect_Result2(CDC* pDC)
 
 void CFrm_Main::OnBnClickedSetBtn()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	
 	CDlg_Set	*dlg = new CDlg_Set;//동적으로 생성해준다
-	dlg -> Create(IDD_DLG_SET,NULL);//모달리스는 반드시 Create로 띄워야한다. 
+	dlg -> Create(IDD_DLG_SET,this);//모달리스는 반드시 Create로 띄워야한다. 
+
+	dlg->m_bFirst = TRUE;
+	CRect rcFrame;
+/*	GetWindowRect(&rcFrame);*/
+	dlg->GetWindowRect(&rcFrame);
+
+
+/*	dlg->MoveWindow(x, y, rcFrame.Width(), rcFrame.Height());*/
 	dlg ->ShowWindow(SW_SHOW);
-	
-	
+
+	dlg->m_bFirst = FALSE;
 }
 
 void CFrm_Main::OnBnClickedGrid1(UINT msg)
@@ -1520,7 +1350,7 @@ void CFrm_Main::OnBnClickedButton7()
 	}
 	m_nLiveON = 0;
 	m_pCamera->StartGrabbing();
-
+	
 	m_bThreadFlag = TRUE;
 	CWinThread *pThread = ::AfxBeginThread(ThreadImageCaptureFunc, this);
 	

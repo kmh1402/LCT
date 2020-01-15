@@ -41,7 +41,7 @@ public:
 	afx_msg void OnBnClickedJogDown2();
 	CString m_Score_Empty;
 	CString m_EdtPitch;
-	
+	BOOL m_bFirst;	
 	CString m_Black_Value;
 	CString m_Line_Length;
 	CString m_Line_Count;
@@ -69,4 +69,6 @@ public:
 	CString m_BlueGChk;
 	CString m_BlueBChk;
 	CString m_In_Box_SizeY;
+	afx_msg void OnMove(int x, int y);
+	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
 };

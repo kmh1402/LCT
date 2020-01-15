@@ -52,6 +52,15 @@ BOOL CDlg_Model::OnInitDialog()
 	
 	DataLoadSetCaption();
 	ModelListLoad();
+
+	m_font.CreatePointFont(180,"굴림");
+
+		m_Model_List.SetFont(&m_font, TRUE);
+
+
+		GetDlgItem(IDC_MODEL_LIST)->SetFont(&m_font);
+
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
@@ -70,7 +79,7 @@ void CDlg_Model::ModelListLoad()
 	int nLength;
 	int nFind;
 	CString csData;
-	CString csOldModel[50];
+	CString csOldModel[100];
 	int nOldIndex = 0;
 	int nChkCnt = 0;
 	m_Model_List.ResetContent();
@@ -88,7 +97,7 @@ void CDlg_Model::ModelListLoad()
 			nLength = csFileName.GetLength();
 			nFind = csFileName.Find(".");
 			csData = csFileName.Mid(0,nFind);
-			for(int nI = 0; nI < 50; nI++)
+			for(int nI = 0; nI < 100; nI++)
 			{
 				if(csOldModel[nI] != csData)
 				{
@@ -99,7 +108,7 @@ void CDlg_Model::ModelListLoad()
 			if(nChkCnt != 0)
 			{
 				nChkCnt = 0;
-				for(int nJ = 0; nJ < 50; nJ++)
+				for(int nJ = 0; nJ < 100; nJ++)
 				{
 					if(csOldModel[nJ] == csData)
 					{
@@ -109,12 +118,12 @@ void CDlg_Model::ModelListLoad()
 
 				if(nChkCnt == 0)
 				{
-					for(int nQ = 0; nQ < 50; nQ++)
+					for(int nQ = 0; nQ < 100; nQ++)
 					{
 						if(csOldModel[nQ] == "")
 						{
 							csOldModel[nQ] = csData;
-							nQ = 50;
+							nQ = 100;
 							m_Model_List.AddString(csData);
 						}
 					}

@@ -58,6 +58,7 @@ public:
 	int m_ScoreON1;
 	int m_Score_Mode1;
 	int m_Result1;
+
 	void FileSave(CString csCnt);
 	afx_msg void OnBnClickedScoreOn1(UINT msg);
 	afx_msg void OnBnClickedResultOn1(UINT msg);

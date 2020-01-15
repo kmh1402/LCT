@@ -103,6 +103,8 @@ BEGIN_MESSAGE_MAP(CDlg_Set, CDialog)
 	ON_BN_CLICKED(IDC_JOG_DOWN, &CDlg_Set::OnBnClickedJogDown)
 	ON_BN_CLICKED(IDC_JOG_DOWN2, &CDlg_Set::OnBnClickedJogDown2)
 	ON_CONTROL_RANGE(BN_CLICKED, IDC_SET_MODE1 , IDC_SET_MODE2 , OnBnClickedSetMode1)
+	ON_WM_MOVE()
+	ON_WM_SHOWWINDOW()
 END_MESSAGE_MAP()
 
 
@@ -525,4 +527,39 @@ void CDlg_Set::OnBnClickedJogDown2()
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	DataSave();
 	AfxMessageBox("Data Save Complete");
+}
+
+
+void CDlg_Set::OnMove(int x, int y)
+{
+	CDialog::OnMove(x, y);
+
+	/*static BOOL bFirst = TRUE;*/
+
+	if (!m_bFirst)
+	{
+		CRect rcFrame;
+		GetWindowRect(&rcFrame);
+
+		AfxGetApp()->WriteProfileInt("CDlg_Set", "mov_X", rcFrame.left);
+		AfxGetApp()->WriteProfileInt("CDlg_Set", "mov_y", rcFrame.top);
+	}
+
+/*	bFirst = FALSE;*/
+}
+
+
+void CDlg_Set::OnShowWindow(BOOL bShow, UINT nStatus)
+{
+	CDialog::OnShowWindow(bShow, nStatus);
+
+	if (bShow)
+	{
+		int x = AfxGetApp()->GetProfileInt("CDlg_Set", "mov_X", 1280 / 2);
+		int y = AfxGetApp()->GetProfileInt("CDlg_Set", "mov_y", 1024 / 2);
+
+		CRect rcFrame;
+		GetWindowRect(&rcFrame);
+		MoveWindow(x, y, rcFrame.Width(), rcFrame.Height());
+	}
 }

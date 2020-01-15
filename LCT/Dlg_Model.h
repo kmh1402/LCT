@@ -26,6 +26,7 @@ public:
 	void DataLoadSetCaption();
 	void ModelListLoad();
 	virtual BOOL OnInitDialog();
+	CFont m_font;
 protected:
 	
 public:

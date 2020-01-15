@@ -61,4 +61,5 @@ extern int gnBlueCntSet;
 extern int gnBlueRChk;
 extern int gnBlueGChk;
 extern int gnBlueBChk;
+extern int m_ngrab;
 

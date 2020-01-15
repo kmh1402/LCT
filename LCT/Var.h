@@ -34,3 +34,4 @@ int gnBlueCntSet;
 int gnBlueRChk;
 int gnBlueGChk;
 int gnBlueBChk;
+int m_ngrab;

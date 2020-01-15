@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Main">
+      <UniqueIdentifier>{07d9fe12-6f83-4831-a634-9dc8c445a820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Frm">
+      <UniqueIdentifier>{7fd4581a-a850-4e77-acf8-745db603f491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Dlg">
+      <UniqueIdentifier>{d2a91bce-0b41-4cbc-8165-d6c76e85456d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Run">
+      <UniqueIdentifier>{c449e83e-dbb3-48b5-a72b-36aed04b4325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Main">
+      <UniqueIdentifier>{53f489f5-faef-4edd-832d-01cff14c3961}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Extern">
+      <UniqueIdentifier>{c979b54e-bbe5-47aa-8774-dfa1d6a2eb36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Dlg">
+      <UniqueIdentifier>{aa32ed76-208c-44b3-8a76-daa4a83f510f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Frm">
+      <UniqueIdentifier>{9ba1476c-422a-42d8-94d9-78ac0d73854e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\OCX">
+      <UniqueIdentifier>{678d96b6-5c9a-4f76-98d9-500835a1ff65}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClassView.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="FileView.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="LCT.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="LCTDoc.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="LCTView.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputWnd.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesWnd.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTree.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Frm_Main.h">
+      <Filter>헤더 파일\Frm</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleBmp.h">
+      <Filter>헤더 파일\OCX</Filter>
+    </ClInclude>
+    <ClInclude Include="Var.h">
+      <Filter>헤더 파일\Extern</Filter>
+    </ClInclude>
+    <ClInclude Include="VarEx.h">
+      <Filter>헤더 파일\Extern</Filter>
+    </ClInclude>
+    <ClInclude Include="Dlg_Set.h">
+      <Filter>헤더 파일\Dlg</Filter>
+    </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>헤더 파일\Extern</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncEx.h">
+      <Filter>헤더 파일\Extern</Filter>
+    </ClInclude>
+    <ClInclude Include="Dlg_Model.h">
+      <Filter>헤더 파일\Dlg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClassView.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="FileView.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LCT.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LCTDoc.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LCTView.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputWnd.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTree.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Frm_Main.cpp">
+      <Filter>소스 파일\Frm</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleBmp.cpp">
+      <Filter>헤더 파일\OCX</Filter>
+    </ClCompile>
+    <ClCompile Include="Dlg_Set.cpp">
+      <Filter>소스 파일\Dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="Dlg_Model.cpp">
+      <Filter>소스 파일\Dlg</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LCT.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\file_view.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\file_view_hc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\class_view.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\class_view_hc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\fileview.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\fileview_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\classview.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\classview_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\explorer.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\explorer_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\sort.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\sort_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\menuimages.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\menuimages_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\output_wnd.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\output_wnd_hc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\properties_wnd.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\properties_wnd_hc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\properties.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\properties_hc.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="UserImages.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\LCTDoc.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\LCT.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\LCT.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+</Project>

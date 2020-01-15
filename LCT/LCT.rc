@@ -1,0 +1,709 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#include ""res\\LCT.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""l.KOR\\afxres.rc""      // 표준 구성 요소\r\n"
+    "#include ""l.KOR\\afxprint.rc""    // 인쇄 미리 보기 리소스\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""l.KOR\\afxribbon.rc""        // MFC 리본 및 컨트롤 막대 리소스\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\LCT.ico"
+IDR_LCTTYPE             ICON                    "res\\LCTDoc.ico"
+IDI_FILE_VIEW           ICON                    "res\\file_view.ico"
+IDI_FILE_VIEW_HC        ICON                    "res\\file_view_hc.ico"
+IDI_CLASS_VIEW          ICON                    "res\\class_view.ico"
+IDI_CLASS_VIEW_HC       ICON                    "res\\class_view_hc.ico"
+IDI_OUTPUT_WND          ICON                    "res\\output_wnd.ico"
+IDI_OUTPUT_WND_HC       ICON                    "res\\output_wnd_hc.ico"
+IDI_PROPERTIES_WND      ICON                    "res\\properties_wnd.ico"
+IDI_PROPERTIES_WND_HC   ICON                    "res\\properties_wnd_hc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDR_MAINFRAME_256       BITMAP                  "res\\Toolbar256.bmp"
+IDR_SORT                BITMAP                  "res\\sort.bmp"
+IDB_SORT_24             BITMAP                  "res\\sort_hc.bmp"
+IDB_FILE_VIEW           BITMAP                  "res\\fileview.bmp"
+IDB_FILE_VIEW_24        BITMAP                  "res\\fileview_hc.bmp"
+IDB_CLASS_VIEW          BITMAP                  "res\\classview.bmp"
+IDB_CLASS_VIEW_24       BITMAP                  "res\\classview_hc.bmp"
+IDR_EXPLORER            BITMAP                  "res\\explorer.bmp"
+IDB_EXPLORER_24         BITMAP                  "res\\explorer_hc.bmp"
+IDR_MENU_IMAGES         BITMAP                  "res\\menuimages.bmp"
+IDB_MENU_IMAGES_24      BITMAP                  "res\\menuimages_hc.bmp"
+IDR_PROPERTIES          BITMAP                  "res\\properties.bmp"
+IDB_PROPERTIES_HC       BITMAP                  "res\\properties_hc.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_MAINFRAME_256 TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SORT TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_SORT_MENU
+    BUTTON      ID_NEW_FOLDER
+END
+
+IDR_EXPLORER TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_PROPERTIES
+END
+
+IDR_MENU_IMAGES TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_WINDOW_MANAGER
+    SEPARATOR
+    BUTTON      ID_WINDOW_CASCADE
+    BUTTON      ID_WINDOW_TILE_HORZ
+    BUTTON      ID_TOOLS_MACRO
+    BUTTON      ID_SORTING_SORTALPHABETIC
+    BUTTON      ID_SORTING_SORTBYTYPE
+    BUTTON      ID_SORTING_SORTBYACCESS
+    BUTTON      ID_SORTING_GROUPBYTYPE
+END
+
+IDR_PROPERTIES TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_EXPAND_ALL
+    BUTTON      ID_SORTPROPERTIES
+    BUTTON      ID_PROPERTIES1
+    BUTTON      ID_PROPERTIES2
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새로 만들기(&N)\tCtrl+N",          ID_FILE_NEW
+        MENUITEM "열기(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",           ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "인쇄(&P)...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "인쇄 미리 보기(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "인쇄 설정(&R)...",                ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "최근에 사용한 파일",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "끝내기(&X)",                     ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)\tCtrl+Z",           ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        POPUP "도구 모음 및 도킹 창(&T)"
+        BEGIN
+            MENUITEM "<자리 표시자>",                    ID_VIEW_TOOLBAR
+        END
+        MENUITEM "상태 표시줄(&S)",                  ID_VIEW_STATUS_BAR
+        POPUP "응용 프로그램 모양(&A)"
+        BEGIN
+            MENUITEM "Windows 2000(&2)",            ID_VIEW_APPLOOK_WIN_2000
+            MENUITEM "Office XP(&X)",               ID_VIEW_APPLOOK_OFF_XP
+            MENUITEM "Windows XP(&W)",              ID_VIEW_APPLOOK_WIN_XP
+            MENUITEM "Office 2003(&3)",             ID_VIEW_APPLOOK_OFF_2003
+            MENUITEM "Visual Studio 200&5",         ID_VIEW_APPLOOK_VS_2005
+            MENUITEM "Visual Studio 200&8",         ID_VIEW_APPLOOK_VS_2008
+            POPUP "Office 2007(&7)"
+            BEGIN
+                MENUITEM "파랑 스타일(&B)",                  ID_VIEW_APPLOOK_OFF_2007_BLUE
+                MENUITEM "검정 스타일(&L)",                  ID_VIEW_APPLOOK_OFF_2007_BLACK
+                MENUITEM "은색 스타일(&S)",                  ID_VIEW_APPLOOK_OFF_2007_SILVER
+                MENUITEM "바다색 스타일(&A)",                 ID_VIEW_APPLOOK_OFF_2007_AQUA
+            END
+        END
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "LCT 정보(&A)...",               ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_EDIT MENU
+BEGIN
+    POPUP "편집"
+    BEGIN
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+END
+
+IDR_POPUP_SORT MENU
+BEGIN
+    POPUP "정렬"
+    BEGIN
+        MENUITEM "사전순 정렬(&S)",                  ID_SORTING_SORTALPHABETIC
+        MENUITEM "형식별 정렬(&T)",                  ID_SORTING_SORTBYTYPE
+        MENUITEM "액세스별 정렬(&E)",                 ID_SORTING_SORTBYACCESS
+        MENUITEM "형식별 그룹화(&Y)",                 ID_SORTING_GROUPBYTYPE
+    END
+END
+
+IDR_POPUP_EXPLORER MENU
+BEGIN
+    POPUP "탐색기"
+    BEGIN
+        MENUITEM "열기(&O)",                      ID_OPEN
+        MENUITEM "연결 프로그램(&W)....",             ID_OPEN_WITH
+        MENUITEM SEPARATOR
+        MENUITEM "컴파일(&C)",                     ID_DUMMY_COMPILE
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "제거(&R)",                      ID_EDIT_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "속성(&P)...",                   ID_PROPERTIES
+    END
+END
+
+IDR_OUTPUT_POPUP MENU
+BEGIN
+    POPUP "팝업"
+    BEGIN
+        MENUITEM "복사(&C)",                      ID_EDIT_COPY
+        MENUITEM "지우기(&C)",                     ID_EDIT_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "숨기기(&H)",                     ID_VIEW_OUTPUTWND
+    END
+END
+
+IDR_HELP_MENU MENU
+BEGIN
+    MENUITEM "LCT 정보(&A)...",               ID_APP_ABOUT
+END
+
+IDR_THEME_MENU MENU
+BEGIN
+    MENUITEM "Office 2007(파랑 스타일)(&B)",     ID_VIEW_APPLOOK_OFF_2007_BLUE
+    MENUITEM "Office 2007(검정 스타일)(&L)",     ID_VIEW_APPLOOK_OFF_2007_BLACK
+    MENUITEM "Office 2007(은색 스타일)(&S)",     ID_VIEW_APPLOOK_OFF_2007_SILVER
+    MENUITEM "Office 2007(바다색 스타일)(&A)",    ID_VIEW_APPLOOK_OFF_2007_AQUA
+    MENUITEM "Windows 7(&D)",               ID_VIEW_APPLOOK_WINDOWS_7
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LCT 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "LCT, 버전 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2019",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "확인",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_FRM_MAIN DIALOGEX 0, 0, 710, 620
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "굴림", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_DISPLAY,"Static",SS_BLACKFRAME,0,0,512,410
+    PUSHBUTTON      "LIVE",IDC_BUTTON3,519,347,50,20
+    PUSHBUTTON      "STOP",IDC_BUTTON4,588,347,50,20
+    PUSHBUTTON      "EXIT",IDC_BUTTON5,515,585,194,33
+    GROUPBOX        "VISION CONTROL",IDC_STATIC,514,296,194,73
+    PUSHBUTTON      "START",IDC_BUTTON7,515,472,194,112
+    CONTROL         "",IDC_SKIP,"Static",SS_BLACKFRAME,517,67,191,225
+    PUSHBUTTON      "SET",IDC_SET_BTN,655,347,50,20
+    CONTROL         "GRID ON",IDC_GRID1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,521,310,45,10
+    CONTROL         "GRID OFF",IDC_GRID2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,521,331,47,10
+    CONTROL         "SCORE ON",IDC_SCORE_ON1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,580,310,53,10
+    CONTROL         "SCORE OFF",IDC_SCORE_ON2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,580,331,55,10
+    GROUPBOX        "JIG SKIP",IDC_STATIC,515,56,194,239
+    CONTROL         "",IDC_DISP_RESULT1,"Static",SS_BLACKFRAME,3,423,251,160
+    CONTROL         "",IDC_DISP_RESULT2,"Static",SS_BLACKFRAME,259,424,251,159
+    GROUPBOX        "COUNT DEVICE RESULT",IDC_STATIC,1,414,255,171
+    GROUPBOX        "LOT SUM RESULT",IDC_STATIC,257,414,255,171
+    PUSHBUTTON      "COUNT RESET",IDC_BUTTON9,2,585,252,33
+    PUSHBUTTON      "COUNT RESET",IDC_BUTTON10,258,585,252,33
+    GROUPBOX        "MODEL NAME",IDC_STATIC,514,414,194,56
+    PUSHBUTTON      "",IDC_MODEL_NAME,520,437,186,29
+    CONTROL         "",IDC_DISP_LOGO,"Static",SS_BLACKFRAME,514,1,194,52
+    CONTROL         "OK SCORE",IDC_RESULTV1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,648,304,52,10
+    CONTROL         "EMPTY",IDC_RESULTV2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,648,318,58,10
+    CONTROL         "BLUE",IDC_RESULTV3,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,648,334,58,9
+    PUSHBUTTON      "COUNT CLEAR",IDC_BUTTON1,610,370,94,39
+    PUSHBUTTON      "LOT SAVE",IDC_BUTTON2,518,372,89,37
+END
+
+IDD_DLG_SET DIALOGEX 0, 0, 287, 342
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "X COUNT",IDC_BUTTON1,151,10,60,20
+    PUSHBUTTON      "Y COUNT",IDC_BUTTON2,151,30,60,20
+    EDITTEXT        IDC_EDT_XCNT,211,11,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_YCNT,211,31,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    GROUPBOX        "GRID SET",IDC_STATIC,147,57,139,205
+    PUSHBUTTON      "X SIZE",IDC_BUTTON3,152,67,70,20
+    PUSHBUTTON      "Y SIZE",IDC_BUTTON4,152,87,70,20
+    EDITTEXT        IDC_EDT_XSIZE,223,68,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_YSIZE,223,88,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    GROUPBOX        "ETC.. SET",IDC_STATIC,147,0,137,54
+    PUSHBUTTON      "X GAP",IDC_BUTTON5,152,108,70,20
+    PUSHBUTTON      "Y GAP",IDC_BUTTON6,152,128,70,20
+    EDITTEXT        IDC_EDT_XGAP,223,108,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_YGAP,223,129,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "OK SCORE",IDC_BUTTON7,5,9,60,21
+    EDITTEXT        IDC_EDT_SCORE,65,10,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "OK",IDC_BUTTON8,146,322,140,20
+    PUSHBUTTON      "X POS",IDC_BUTTON9,152,149,70,20
+    PUSHBUTTON      "Y POS",IDC_BUTTON10,152,170,70,20
+    EDITTEXT        IDC_EDT_XPOS,223,150,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_YPOS,223,171,60,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "UP",IDC_JOG_UP,194,195,45,20
+    PUSHBUTTON      "DOWN",IDC_JOG_DOWN,194,235,45,20
+    PUSHBUTTON      "LEFT",IDC_JOG_LEFT,149,215,45,20
+    PUSHBUTTON      "RIGHT",IDC_JOG_RIGHT,239,215,45,20
+    PUSHBUTTON      "SAVE",IDC_JOG_DOWN2,146,301,140,20
+    GROUPBOX        "MODE 1SET",IDC_STATIC,1,0,137,197
+    EDITTEXT        IDC_EDT_PITCH,195,216,43,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "WHITE COLOR",IDC_BUTTON20,5,29,60,20
+    EDITTEXT        IDC_BLACK_VALUE,65,30,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "R",IDC_BUTTON13,6,106,40,14
+    EDITTEXT        IDC_EDT_BLUE_R,6,121,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "G",IDC_BUTTON15,52,106,40,14
+    EDITTEXT        IDC_EDT_BLUE_G,52,121,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "B",IDC_BUTTON16,96,106,40,14
+    EDITTEXT        IDC_EDT_BLUE_B,96,121,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "R",IDC_BUTTON17,5,157,40,14
+    EDITTEXT        IDC_EDT_BLACK_R,5,172,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "G",IDC_BUTTON19,51,157,40,14
+    EDITTEXT        IDC_EDT_BLACK_G,51,172,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "B",IDC_BUTTON24,95,157,40,14
+    EDITTEXT        IDC_EDT_BLACK_B,95,172,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "EMPTY SCORE",IDC_BUTTON21,5,49,60,20
+    EDITTEXT        IDC_LENS_IN_SCORE,65,50,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "IN BOX X",IDC_BUTTON22,5,71,35,20
+    EDITTEXT        IDC_IN_BOX_SIZE,40,72,29,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    GROUPBOX        "LINE COLOR",IDC_STATIC,4,93,133,50
+    GROUPBOX        "WHITE COLOR",IDC_STATIC,3,145,134,49
+    EDITTEXT        IDC_EDT_BIG_R,0,290,6,12,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_IDC_EDT_BIG_G,7,290,6,12,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_OK_RANGE_MIN,15,290,6,12,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDT_OK_RANGE_MAX,22,290,6,12,ES_AUTOHSCROLL,WS_EX_RIGHT
+    CONTROL         "INSPECTION MODE1",IDC_SET_MODE1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,148,271,134,9
+    CONTROL         "INSPECTION MODE2",IDC_SET_MODE2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,148,288,134,9
+    EDITTEXT        IDC_EDT_NG_THR,29,290,6,12,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "BLUE SCORE",IDC_BUTTON28,4,212,60,20
+    EDITTEXT        IDC_EDT_BLUE_SCORE,64,212,70,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    GROUPBOX        "BLUE CHECK",IDC_STATIC,1,198,137,79
+    PUSHBUTTON      "R",IDC_BUTTON29,5,239,40,14
+    EDITTEXT        IDC_EDT_BLUE_RCHK,5,255,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "G",IDC_BUTTON30,51,239,40,14
+    EDITTEXT        IDC_EDT_BLUE_GCHK,51,255,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "B",IDC_BUTTON31,95,239,40,14
+    EDITTEXT        IDC_EDT_BLUE_BCHK,95,255,40,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+    PUSHBUTTON      "IN BOX Y",IDC_BUTTON32,71,71,35,20
+    EDITTEXT        IDC_IN_BOX_SIZEY,106,72,29,19,ES_AUTOHSCROLL,WS_EX_RIGHT
+END
+
+IDD_DLG_MODEL DIALOGEX 0, 0, 275, 499
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_MODEL_LIST,3,13,165,453,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "MODEL LIST",IDC_STATIC,0,0,171,472
+    PUSHBUTTON      "",IDC_MODEL_NAME,173,13,100,19
+    LTEXT           "MODEL NAME",IDC_STATIC,173,1,99,12
+    EDITTEXT        IDC_EDT_MODEL,175,80,100,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "ADD",IDC_ADD_BTN,88,473,80,25
+    PUSHBUTTON      "OK",IDC_OK_BTN,174,222,100,46
+    PUSHBUTTON      "MODEL SET",IDC_LOAD_BTN,173,33,100,45
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "LCT"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "LCT.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "LCT.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_FRM_MAIN, DIALOG
+    BEGIN
+    END
+
+    IDD_DLG_SET, DIALOG
+    BEGIN
+    END
+
+    IDD_DLG_MODEL, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 365
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE를 초기화할 수 없습니다. OLE 라이브러리 버전이 올바른지 확인하십시오."
+    IDP_SOCKETS_INIT_FAILED "Windows 소켓을 초기화하지 못했습니다."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "LCT\n\nLCT\n\n\nLCT.Document\nLCT.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "LCT"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "새 문서를 만듭니다.\n새로 만들기"
+    ID_FILE_OPEN            "기존 문서를 엽니다.\n열기"
+    ID_FILE_CLOSE           "활성 문서를 닫습니다.\n닫기"
+    ID_FILE_SAVE            "활성 문서를 저장합니다.\n저장"
+    ID_FILE_SAVE_AS         "활성 문서를 새 이름으로 저장합니다.\n다른 이름으로 저장"
+    ID_FILE_PAGE_SETUP      "인쇄 옵션을 변경합니다.\n페이지 설정"
+    ID_FILE_PRINT_SETUP     "프린터 및 인쇄 옵션을 변경합니다.\n인쇄 설정"
+    ID_FILE_PRINT           "활성 문서를 인쇄합니다.\n인쇄"
+    ID_FILE_PRINT_DIRECT    "현재 옵션을 사용하여 활성 문서를 인쇄합니다.\n빠른 인쇄"
+    ID_FILE_PRINT_PREVIEW   "전체 페이지를 표시합니다.\n인쇄 미리 보기"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호 및 저작권을 표시합니다.\n정보"
+    ID_APP_EXIT             "문서를 저장할지를 묻고 응용 프로그램을 끝냅니다.\n끝내기"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE2       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE3       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE4       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE5       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE6       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE7       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE8       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE9       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE10      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE11      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE12      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE13      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE14      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE15      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE16      "현재 문서를 엽니다."
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다.\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다.\n이전 창"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "활성 창을 여러 개의 창으로 분할합니다.\n분할"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "선택 영역을 지웁니다.\n지우기"
+    ID_EDIT_CLEAR_ALL       "모두 지웁니다.\n모두 지우기"
+    ID_EDIT_COPY            "선택 영역을 복사하여 클립보드에 넣습니다.\n복사"
+    ID_EDIT_CUT             "선택 영역을 잘라내어 클립보드에 넣습니다.\n잘라내기"
+    ID_EDIT_FIND            "지정한 텍스트를 찾습니다.\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용을 삽입합니다.\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 작업을 반복합니다.\n반복"
+    ID_EDIT_REPLACE         "특정 텍스트를 다른 텍스트로 바꿉니다.\n바꾸기"
+    ID_EDIT_SELECT_ALL      "전체 문서를 선택합니다.\n모두 선택"
+    ID_EDIT_UNDO            "마지막 작업 실행을 취소합니다.\n실행 취소"
+    ID_EDIT_REDO            "이전에 실행 취소된 작업을 다시 실행합니다.\n다시 실행"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_STATUS_BAR      "상태 표시줄을 표시하거나 숨깁니다.\n상태 표시줄 설정/해제"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기를 변경합니다."
+    AFX_IDS_SCMOVE          "창 위치를 변경합니다."
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소합니다."
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면 크기로 확대합니다."
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다."
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다."
+    AFX_IDS_SCCLOSE         "문서를 저장할 것인지 확인하고 활성 창을 닫습니다."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복원합니다."
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "인쇄 미리 보기 모드를 닫습니다.\n미리 보기 취소"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STATUS_PANE1        "창 1"
+    IDS_STATUS_PANE2        "창 2"
+    IDS_TOOLBAR_STANDARD    "표준"
+    IDS_TOOLBAR_CUSTOMIZE   "사용자 지정..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_FILE_VIEW           "파일 뷰"
+    IDS_CLASS_VIEW          "클래스 뷰"
+    IDS_OUTPUT_WND          "출력"
+    IDS_PROPERTIES_WND      "속성"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_EXPLORER            "탐색기"
+    IDS_EDIT_MENU           "편집"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_BUILD_TAB           "빌드"
+    IDS_DEBUG_TAB           "디버그"
+    IDS_FIND_TAB            "찾기"
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#include "res\LCT.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "l.KOR\afxres.rc"      // 표준 구성 요소
+#include "l.KOR\afxprint.rc"    // 인쇄 미리 보기 리소스
+#if !defined(_AFXDLL)
+#include "l.KOR\afxribbon.rc"        // MFC 리본 및 컨트롤 막대 리소스
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
